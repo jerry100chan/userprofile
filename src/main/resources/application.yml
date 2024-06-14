@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    root: info
+    org.it.user: debug
+
+task:
+  pool:
+    corePoolSize: 5
+    maxPoolSize: 20
+    keepAliveSeconds: 300
+    queueCapacity: 50
+
+url:
+  user-info: https://jsonplaceholder.typicode.com/users
+  post: https://jsonplaceholder.typicode.com/posts
