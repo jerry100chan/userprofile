@@ -3,7 +3,7 @@ server:
 
 logging:
   level:
-    root: info
+    root: debug
     org.it.user: debug
 
 task:
@@ -16,3 +16,16 @@ task:
 url:
   user-info: https://jsonplaceholder.typicode.com/users
   post: https://jsonplaceholder.typicode.com/posts
+
+spring:
+  application:
+    name: userprofile
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    locale: en                          # using english as locale
+    time-zone: GMT+8
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false  # forbid java.util.Date, Calendar serialize to timestamp
+      FAIL_ON_EMPTY_BEANS: false        # bean can be null when serializing
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false  # properties can be unknown when deserializing

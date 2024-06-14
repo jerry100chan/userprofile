@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    public Result<String> handleException(Exception e) {
+    public Result<Object> handleException(Exception e) {
         log.error(e.getMessage(), e);
         return Result.error("System Error, please try again or contact admin.");
     }

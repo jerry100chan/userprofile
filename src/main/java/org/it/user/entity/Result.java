@@ -27,12 +27,18 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
-    public static Result<String> error(String msg) {
-        return error(500, msg);
+    public static Result<Object> success(String msg) {
+        return create(200, msg);
+    }
+    public static Result<Object> success() {
+        return create(200, "success");
+    }
+    public static Result<Object> error(String msg) {
+        return create(500, msg);
     }
 
-    public static Result<String> error(int code, String msg) {
-        Result<String> result = new Result<>(code, msg);
+    public static Result<Object> create(int code, String msg) {
+        Result<Object> result = new Result<>(code, msg);
         result.setData("");
         return result;
     }
